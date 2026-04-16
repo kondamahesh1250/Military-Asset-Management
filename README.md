@@ -1,142 +1,150 @@
-# KristalBall Assignment Reference Document
+📘 Military Asset Management System
+🚀 Project Overview
 
-# Objective
+The Military Asset Management System is a full-stack web application built using React, Node.js, and MongoDB to manage and track military assets such as vehicles, weapons, and ammunition across multiple bases.
 
-The goal of this assignment is to develop a **Military Asset Management System** that allows commanders and logistics personnel to manage critical assets such as vehicles, weapons, and ammunition across multiple bases. The system will provide features for tracking asset balances, recording assignments and expenditures, facilitating transfers between bases, and implementing role-based access control (RBAC) to ensure secure data access. You will be using **React** for the frontend and **Node.js** for the backend to build this application.
+The system enables users to:
 
-# Technical Requirements
+Manage asset inventory
+Track transfers between bases
+Handle assignments and expenditures
+Ensure secure access using Role-Based Access Control (RBAC)
 
-- Frontend: React
-- Backend: Node.js
-- Database: MongoDB
+🛠️ Tech Stack
 
-# Step-by-Step Instructions
+Frontend
+----------
+React.js
+Axios
+React Router
 
-### Step 1: Set Up Your Development Environment
+Backend
+---------
+Node.js
+Express.js
 
-1. Install Node.js from the official website.
-2. Set up a new React project using Create React App:
-    
-    ```bash
-    npx create-react-app military-asset-management
-    ```
-    
-3. Create a new directory for your backend and initialize a Node.js project:
-    
-    ```bash
-    mkdir backend
-    cd backend
-    npm init -y
-    ```
-    
+Database
+---------
+MongoDB (Mongoose)
 
-### Step 2: Install Required Packages
-
-1. For the frontend, navigate to the React project directory and install Axios for API calls:
-    
-    ```bash
-    cd military-asset-management
-    npm install axios
-    ```
-    
-2. For the backend, install Express and any other necessary packages:
-    
-    ```bash
-    cd backend
-    npm install express cors body-parser mongoose
-    ```
-    
-
-### Step 3: Create the Backend Server
-
-1. In the backend directory, create an `index.js` file and set up a basic Express server:
-    
-    ```jsx
-    const express = require('express');
-    const cors = require('cors');
-    const bodyParser = require('body-parser');
-    
-    const app = express();
-    app.use(cors());
-    app.use(bodyParser.json());
-    
-    app.listen(5000, () => {
-        console.log('Server is running on port 5000');
-    });
-    ```
-    
-
-### Step 4 : Design the database schema
-
-Create a schema that includes tables or collections for assets, transfers, assignments, and users. For example, you might have collections like `assets`, `transfers`, and `users`. Each collection should have fields relevant to its purpose, such as `assetName`, `base`, `assignedTo`, etc.
-
-### Step 5: Define API Endpoints
-
-1. Create routes for managing assets, including purchases, transfers, and assignments. For example:
-
-    
-    ```jsx
-    app.post('/api/purchases', (req, res) => {
-        // Logic to record purchases
-    });
-    ```
-    
-
-### Step 6: Implement Role-Based Access Control (RBAC)
-
-1. Create middleware to check user roles and restrict access to certain endpoints based on roles (Admin, Base Commander, Logistics Officer).
-
-### Step 7: Build the Frontend Components
-
-1. Create components for the Dashboard, Purchases Page, Transfer Page, and Assignments & Expenditures Page.
-2. Use Axios to fetch data from the backend and display it in your components.
-
-### Step 8: Add Filtering and Pop-up Display
-
-1. Implement filtering options for the Dashboard and create a pop-up display for detailed views of net movements.
-
-### Step 9: Testing the Application
-
-1. Test all features to ensure they work as expected. Check API responses and UI interactions.
-
-### Step 10: Deployment
-
-1. Deploy the backend on a service like Render and the frontend on platforms like Netlify or Vercel.
-2. Ensure that the deployed links are accessible and functional.
-
-### Step 11: Documentation
-
-1. Prepare a PDF file that includes:
-    - Project Overview
-    - Tech Stack & Architecture
-    - Data Models / Schema
-    - RBAC Explanation
-    - API Logging
-    - Setup Instructions
-    - API Endpoints
-    - Login Credentials
-
-# Project Structure
-
+📂 Project Structure
+----------------------------
 military-asset-management/
+│
 ├── backend/
-│   ├── index.js
-│   ├── routes/
-│   │   ├── purchases.js
-│   │   ├── transfers.js
-│   │   └── assignments.js
-│   ├── models/
-│   │   ├── asset.js
-│   │   └── user.js
-│   └── middleware/
-│       └── auth.js
-└── military-asset-management/
+│ ├── models/
+│ ├── routes/
+│ ├── middleware/
+│ └── index.js
+│
+└── frontend/
 ├── src/
-│   ├── components/
-│   │   ├── Dashboard.js
-│   │   ├── Purchases.js
-│   │   ├── Transfers.js
-│   │   └── Assignments.js
-│   ├── App.js
-│   └── index.js
-└── public/
+│ ├── components/
+│ ├── api.js
+│ └── App.js
+
+🔐 Features
+-------------
+✅ Authentication & Authorization
+JWT-based authentication
+Role-Based Access Control (RBAC)
+
+👥 Roles
+Admin → Full access
+Commander → Transfers & Assignments
+Logistics Officer → Purchases
+
+📦 Core Functionalities
+
+1. Asset Management (Purchases)
+   Add assets to specific bases
+   Track available stock
+2. Transfers
+   Move assets between bases
+   Automatically updates stock:
+   Deducts from source base
+   Adds to destination base
+3. Assignments & Expenditures
+   🔹 ASSIGNED
+   Assets given to personnel
+   Example: 10 rifles assigned to a soldier
+   🔹 EXPENDED
+   Assets consumed or unusable
+   Example: 5 bullets used in training
+4. Dashboard
+   Displays all assets
+   Shows quantity and base
+   Includes filtering options
+5. Popup Details
+   View transfer history
+   View assignment/expenditure history
+   ⚙️ Setup Instructions
+6. Clone Repository
+   git clone (https://github.com/kondamahesh1250/Military-Asset-Management.git)
+   cd military-asset-management
+7. Backend Setup
+   cd backend
+   npm install
+
+Create .env file:
+
+MONGO_URI=mongodb://127.0.0.1:27017/militaryDB
+JWT_SECRET=secret
+
+Run server:
+--------------
+node index.js 
+
+3. Frontend Setup
+--------------------
+cd frontend
+npm install
+npm start
+
+🔑 Test Credentials
+-----------------------
+[
+{ "username": "admin", "password": "123", "role": "ADMIN" },
+{ "username": "commander", "password": "123", "role": "COMMANDER" },
+{ "username": "logistics", "password": "123", "role": "LOGISTICS" }
+]
+
+🔄 API Endpoints
+---------------------
+Auth
+POST /api/auth/login
+
+Assets
+GET /api/assets
+POST /api/assets
+Transfers
+
+GET /api/transfers
+POST /api/transfers
+
+Assignments
+GET /api/assignments
+POST /api/assignments
+
+🧠 How It Works
+--------------------
+User logs in → receives JWT token
+Token stored in frontend
+Each request is validated using middleware
+Role determines access to features
+Data is stored and updated in MongoDB
+
+🎯 Key Highlights
+-------------------
+Dynamic dropdowns (asset & base filtering)
+Real-time stock validation
+Prevents invalid transfers
+Secure role-based API access
+Clean and scalable architecture
+
+💡 Future Enhancements
+----------------------------
+📊 Charts & analytics dashboard
+🔄 Undo/rollback operations
+🔔 Notifications for low stock
+🌐 Deployment (Render + Vercel)
