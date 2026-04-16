@@ -1,0 +1,96 @@
+.dashboard-container-main {
+  min-height: 100vh;
+  background: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.dashboard-card-main {
+  width: 100%;
+  max-width: 1000px;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-title-main {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.dashboard-role-info {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.dashboard-filter-section {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.dashboard-select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.dashboard-filter-btn {
+  padding: 10px 15px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dashboard-filter-btn:hover {
+  background: #0056b3;
+}
+
+.dashboard-assets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.dashboard-asset-card {
+  background: #fafafa;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  transition: 0.3s;
+}
+
+.dashboard-asset-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-asset-card h4 {
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.dashboard-view-btn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  background: #28a745;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dashboard-view-btn:hover {
+  background: #1e7e34;
+}

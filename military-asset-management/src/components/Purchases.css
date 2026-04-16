@@ -1,0 +1,63 @@
+.purchase-container-main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f9;
+}
+
+.purchase-card-main {
+  background: white;
+  padding: 30px;
+  width: 350px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.purchase-title-main {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.purchase-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.purchase-form-group label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.purchase-form-group input,
+.purchase-form-group select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+.purchase-form-group input:focus,
+.purchase-form-group select:focus {
+  border-color: #007bff;
+}
+
+.purchase-submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #28a745;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.purchase-submit-btn:hover {
+  background: #1e7e34;
+}

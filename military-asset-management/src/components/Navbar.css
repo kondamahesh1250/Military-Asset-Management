@@ -1,0 +1,74 @@
+.nav-main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f2937;
+  padding: 12px 25px;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-logo-text {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links-section {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link-item {
+  color: #e5e7eb;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+.nav-link-item:hover {
+  color: #ffffff;
+}
+
+.nav-link-item::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background: #3b82f6;
+  transition: 0.3s;
+}
+
+.nav-link-item:hover::after {
+  width: 100%;
+}
+
+.nav-right-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-role-badge {
+  background: #374151;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.nav-logout-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-logout-btn:hover {
+  background: #dc2626;
+}
