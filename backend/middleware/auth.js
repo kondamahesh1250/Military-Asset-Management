@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
 module.exports = (roles = []) => {
   return (req, res, next) => {
@@ -6,7 +7,7 @@ module.exports = (roles = []) => {
     if (!token) return res.status(401).json("No Token");
 
     try {
-      const decoded = jwt.verify(token, "secret");
+      const decoded = jwt.verify(token, process.env.SECRET_KEY);
       req.user = decoded;
 
       if (roles.length && !roles.includes(decoded.role)) {
